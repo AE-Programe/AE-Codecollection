@@ -6,10 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CelsiusAndFahrenheit Converter</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
+    <nav class="titleBar">
+        <div class="nav-toleft">
+            <img src="_designLogo/logo_white.svg" width="300" height="100" alt="" class="logo">
+        </div>
+        <div class="nav-toright">
+            <a href="https://github.com/AE-Programe/AE-Codecollection" target="_blank" class="btn btn-light fitParent-height">
+                <img class="icon" src="_designLogo/github.svg" alt="">
+                <span>Github</span>
+            </a>
+        </div>
+    </nav>
+    <div class="container flexcolumn">
+        <h4>Convert to Fahrenheit</h4>
+        <input type="text" id="toF" placeholder="Celsius value goes here">
+        <container class="flexrow"><span>Fahrenheit Value:&nbsp;</span><span id="fValue">0</span></container>
+        <a id="convertToF" href="javascript:void(0)" class="btn btn-primary">Convert</a>
+    </div>
+    <div class="container flexcolumn">
+        <h4>Convert to Celsius</h4>
+        <input type="text" id="toC" placeholder="Fahrenheit value goes here">
+        <container class="flexrow"><span>Celsius Value:&nbsp;</span><span id="cValue">0</span></container>
 
+        <a id="convertToC" href="javascript:void(0)" class="btn btn-primary">Convert</a>
+    </div>
+
+    <script src="code.js"></script>
+    <script>
+        //Prevent any input aside from numbers and leading negative sign
+        let inputF = document.getElementById('toF')
+        let inputC = document.getElementById('toC')
+        inputF.addEventListener('input', function(e) {
+            if (isNaN(e.target.value))
+                e.target.value = last;
+            else
+                last = e.target.value;
+        })
+        inputC.addEventListener('input', function(e) {
+                if (isNaN(e.target.value))
+                    e.target.value = last;
+                else
+                    last = e.target.value;
+            })
+            /*********************************************************/
+        let convertToFahrenheit = document.getElementById('convertToF')
+        convertToFahrenheit.addEventListener('click', function() {
+            let fValue = document.getElementById('fValue')
+            fValue.innerText = toFahrenheit(inputF.value)
+        })
+
+        let convertToCelsius = document.getElementById('convertToC')
+        convertToCelsius.addEventListener('click', function() {
+            let cValue = document.getElementById('cValue')
+            cValue.innerText = toCelsius(inputC.value)
+        })
+    </script>
 </body>
 
 </html>

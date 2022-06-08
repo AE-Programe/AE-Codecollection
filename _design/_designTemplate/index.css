@@ -1,3 +1,8 @@
+/** 
+Please Remember that im not a designer, 
+This is all i can do to try to make it good for the eye as possible.
+**/
+
 :root {
     --color1: #ECE5C7;
     --color2: #CDC2AE;
@@ -57,7 +62,7 @@ nav.titleBar img.logo {
     height: 100px;
 }
 
-nav.titlebar .nav-toleft {
+nav.titlebar div.nav-toleft {
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -66,7 +71,7 @@ nav.titlebar .nav-toleft {
     gap: 3px;
 }
 
-nav.titlebar .nav-toright {
+nav.titlebar div.nav-toright {
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -75,7 +80,7 @@ nav.titlebar .nav-toright {
     gap: 3px;
 }
 
-nav.titlebar .icon {
+.icon {
     width: 32px;
     height: 32px;
 }
@@ -176,6 +181,7 @@ input {
     padding: 5px 10px;
     font-size: 18px;
     background-color: var(--color6);
+    border: 1px solid transparent;
 }
 
 input:hover {
@@ -183,5 +189,5 @@ input:hover {
 }
 
 input:focus {
-    border: 1px solid var(--color6);
+    border: 1px solid var(--primary);
 }
